@@ -57,7 +57,8 @@ def about(request):
     return render(request,'shortener/about.html')
 
 def decompress(request,compressed):
-    new_url = "http://127.0.0.1:8000/"+ compressed
+    new_url = "https://uvshort.herokuapp.com/" + compressed
+    #new_url = "http://127.0.0.1:8000/"+ compressed
     data = get_object_or_404(Short, shortened_url = new_url)
     #data = Short.objects.get(shortened_url = new_url)
     #print(data)
