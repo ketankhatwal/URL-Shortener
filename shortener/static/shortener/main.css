@@ -1,0 +1,103 @@
+/* default screen, non-retina */
+.background-image { background-image: url("images/background.jpg"); }
+
+@media only screen and (max-width: 574px) {
+    /* Small screen, non-retina */
+    .background-image { background-image: url("images/background575.jpg"); }
+}
+
+@media only screen and (min-width: 575px) and (max-width: 766px) {
+    /* Medium screen, non-retina */
+    ..background-image { background-image: url("images/background767.jpg"); }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+    /* Medium screen, non-retina */
+    .background-image { background-image: url("images/background992.jpg"); }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* Medium screen, non-retina */
+    .background-image { background-image: url("images/background1200.jpg"); }
+}
+
+
+.label_text{
+    margin-top: 20%;
+    color : #000000;
+    font-family: helvetica;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+body{
+    height: 100%;
+
+}
+
+.main{
+    height: 100%;
+    box-shadow: 2px 2px 10px rgb(75, 198, 219);
+    background-color: rgba(76, 202, 224,0.4);
+}
+
+.out{
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.image_size{
+    width:200px;
+    height: 50px;
+    margin-right: auto;
+}
+
+.nav_text{
+    font-size: 20px;
+
+}
+
+.hide_button{
+    float: left;
+    margin-bottom: 10px;
+}
+
+.about{
+    font-family: helvetica;
+    font-size: 30px;
+}
+
+.custom{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.background-image {
+ height: 1080px;
+ width: 100%;
+ text-align: center;
+ background-size: cover;
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-position: center; 
+}
+
+.hero #cafe {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.hero #cafe .inner {
+    padding-top: 63.35%; /* height/width of image */
+    display: block;
+    height: 0;
+}

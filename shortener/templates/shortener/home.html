@@ -1,0 +1,31 @@
+{% extends 'shortener/layout.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class = "container main">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group col-md-10" style="margin-left: auto; margin-right: auto;">
+            <label class="label_text">Copy and paste the link below to make a short link</label><br>
+            <button type="button" onclick="hide_show()" class="btn btn-info hide_button"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+            Options
+            </button>
+            <div class="custom" id="optional" style="display: none;">
+                <input type="text" class="form-control" name="custom" placeholder="Custom name for your URL?(optional)">
+            </div>
+            <input type="text" class="form-control" name="actual_url" placeholder="Enter URL">
+        </fieldset>
+        <div class="form-group" style="text-align: center;">
+            <button class="btn btn-dark" type="submit" value="save" name="save">Convert</button>
+        </div>
+    </form>
+    {% if data %}
+    <div class="col-md-10 out">
+        <span id="url" style="text-align: center;"><a href="{{data}}" target="_blank">{{data}}</a></span>
+        <button class="btn btn-success" onclick="copyToClipboard('#url')">Copy Link <i class="fa fa-hand-pointer-o" aria-hidden="true"></i></button>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock content %}
