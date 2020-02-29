@@ -12,7 +12,7 @@ The project uses following tech stack:
 Python 3.5+
 
 Django 3.0.3
-### To insatll dependencies, run
+### To install dependencies, run
 
 pip install -r requirements.txt
 
