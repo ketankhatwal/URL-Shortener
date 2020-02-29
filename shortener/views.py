@@ -22,7 +22,7 @@ def home(request):
             messages.warning(request,"Enter valid URL")
         else:
             if not match[0][0]:
-                old_url = "https://"+match[0][2]+match[0][3]
+                old_url = "http://"+match[0][2]+match[0][3]
             else:
                 old_url = match[0][0]+match[0][2]+match[0][3]
             print(old_url)
