@@ -5,7 +5,6 @@ from django.contrib import messages
 from requests.exceptions import ConnectionError
 import re, requests, secrets
 
-#pattern = re.compile(r"(https?://)?(www\.)?(\w+)(\.\w+/?)/?(.*)")
 pattern = re.compile(r"((http|ftp|https)://)?([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?")
 
 def home(request):
@@ -15,9 +14,8 @@ def home(request):
         custom = request.POST["custom"]
         custom = custom.lower()
         match = pattern.findall(url)
-        #host_url = request.build_absolute_uri()
-        host_url = "https://uvshort.herokuapp.com/"
-        print(match)
+        host_url = request.build_absolute_uri()
+        #print(match)
         if len(match) == 0:
             messages.warning(request,"Enter valid URL")
         else:
@@ -25,7 +23,7 @@ def home(request):
                 old_url = "http://"+match[0][2]+match[0][3]
             else:
                 old_url = match[0][0]+match[0][2]+match[0][3]
-            print(old_url)
+            #print(old_url)
             try:
                 r = requests.get(old_url)
                 if custom != "":
@@ -58,8 +56,7 @@ def about(request):
     return render(request,'shortener/about.html')
 
 def decompress(request,compressed):
-    new_url = "https://uvshort.herokuapp.com/" + compressed
-    #new_url = "http://127.0.0.1:8000/"+ compressed
+    new_url = "http://127.0.0.1:8000/"+ compressed
     data = get_object_or_404(Short, shortened_url = new_url)
     #data = Short.objects.get(shortened_url = new_url)
     #print(data)
