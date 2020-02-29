@@ -22,5 +22,5 @@ urlpatterns = [
     path('',short_views.home, name = 'home'),
     #path('test/',short_views.test, name = 'test'),
     path('about/',short_views.about, name = 'about'),
-    path('<str:compressed>',short_views.decompress, name = 'decompress')
+    path('<str:compressed>/',short_views.decompress, name = 'decompress')
 ]
