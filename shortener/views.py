@@ -15,7 +15,8 @@ def home(request):
         custom = request.POST["custom"]
         custom = custom.lower()
         match = pattern.findall(url)
-        host_url = request.build_absolute_uri()
+        #host_url = request.build_absolute_uri()
+        host_url = "https://uvshort.herokuapp.com/"
         print(match)
         if len(match) == 0:
             messages.warning(request,"Enter valid URL")
