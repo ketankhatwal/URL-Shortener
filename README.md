@@ -1,6 +1,8 @@
 # URL-Shortener
 URL shortening is a technique on the World Wide Web in which a Uniform Resource Locator (URL) may be made substantially shorter and still direct to the required page.
 
+View Project: http://uvshort.herokuapp.com/
+
 This is achieved by using a redirect which links to the web page that has a long URL.
 
 ## How to Run Locally?
